@@ -14,13 +14,17 @@ export const Form: React.FC<IFormProps> = ({handlerSubmit}) => {
   const login = useSelector((state: RootState) => state.form.login);
   const password = useSelector((state: RootState) => state.form.password);
 
+  const validate = () => {
+    return login !== 'developer21' || password !== '123456';
+  };
+
   return (
     <StyledForm role='form' onSubmit={handlerSubmit}>
       <InputText placeholder='логин' value={login}
         onChange={(e) => dispatch(updateLogin(e.target.value))} />
       <InputText placeholder='пароль' value={password}
         onChange={(e) => dispatch(updatePassword(e.target.value))} />
-      <InputSubmit value='войти' disabled={login !== 'developer21' || password !== '123456'} />
+      <InputSubmit value='войти' disabled={validate()} />
     </StyledForm>
   );
 }
