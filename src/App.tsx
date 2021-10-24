@@ -1,7 +1,7 @@
 import React from 'react';
 import { Login } from './pages/login/Login';
 import { Profile } from './pages/profile/Profile';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from './store';
 import {
   BrowserRouter as Router,
@@ -23,7 +23,7 @@ const PrivateRoute = (props: IPrivateRouteProps) => {
     <Route {...anothers} render={(props) => (
       user.length > 0
         ? <Component {...props} />
-        : <Redirect to='/login' />
+        : <Redirect to='/' />
     )} />
   );
 }

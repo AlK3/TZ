@@ -7,7 +7,7 @@ import { updateLogin, updatePassword } from '../../store/reducers/formReducer';
 import { updateUser } from '../../store/reducers/userReducer';
 import { RootState } from '../../store';
 
-export const Login = () => {
+export const Login: React.FC = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const login = useSelector((state: RootState) => state.form.login);

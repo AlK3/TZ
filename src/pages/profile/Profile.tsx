@@ -4,7 +4,7 @@ import { Heading } from '../../components/Heading/Heading.styles';
 import { RootState } from '../../store';
 import { StyledProfile } from './Profile.styles';
 
-export const Profile = () => {
+export const Profile: React.FC = () => {
   const user = useSelector((state: RootState) => state.user.user);
 
   return (
